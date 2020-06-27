@@ -13,10 +13,10 @@ Text Domain: spriditis
 This theme, like WordPress, is licensed under the GPL.
 */
 
-header {
-	color: red;
+.main-header {
+	background-color: red;
 }
 
-footer {
-	color: blue;
+.main-footer {
+	background-color: red;
 }
