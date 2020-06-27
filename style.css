@@ -1,0 +1,18 @@
+﻿/*
+Theme Name: Spriditis
+Theme URI: http://68.183.71.67/wordpress2/
+Author: the Jānis Ozoliņš
+Author URI: http://68.183.71.67/wordpress2/
+Description: Custom theme for Spridits web-store
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: store, custom, children, clothes
+Text Domain: spriditis
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+.body {
+	background-color: pink;
+}
