@@ -11,6 +11,4 @@ get_header();
 
 <?php get_template_part('store-front'); ?>
 
-<p align="center"><?php posts_nav_link(); ?></p>
-
 <?php get_footer(); ?>
