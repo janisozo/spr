@@ -17,8 +17,17 @@ body {
 	/* background-color: grey; */
 }
 
+/* HEADER */
 .main-header {
 	background-color: none;
+}
+#new-product-page-link {
+	float: right;
+	margin-top: 2rem;
+	margin-right: 1rem;
+	padding: 1.2rem;
+	background-color: rgb(66, 136, 194);
+	color: white;
 }
 
 .main-footer {
@@ -89,18 +98,30 @@ a.dropActionAnchor:hover, a.dropActionAnchor:focus {
 	border: none;
 }
 
+/* Card image a tag containing the img*/
+a.card-img-a {
+	min-height: 250px;
+}
 /* Card image */
 img.card-img-top {
 	max-width: 250px;
 	max-height: 250px;
 }
 
+
 /* Card body */
 .card-body {
 	padding-top: 0.6rem;
+	text-align: center;
 }
 
 /* Card title */
+.listed-product-header, .listed-product-header:hover, .listed-product-header:focus {
+	text-decoration-line: none;
+	font-size: 1.6rem !important;
+	color: black;
+}
+
 h5.card-title {
     margin-bottom: 0;
 }
@@ -174,4 +195,149 @@ span.akcija-ribbon {
 	padding-bottom: 1px;
 	background-color: #e75936;
 	border-radius: 0.4rem;
+}
+
+/* Price span for product windows */
+span.listed-product-price {
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+/* SINGLE PRODUCT PAGE */
+.single-product-col-center-text {
+	text-align: center;
+}
+/* Prouct highlight image size restriction */
+img#product-highlight-img {
+	width: 500px;
+	height: 500px;
+}
+img.single-product-small-image {
+	display: inline-block;
+	max-width: 80px;
+	max-height: 80px;
+}
+img.single-product-small-image:hover {
+	cursor: pointer;
+	border: 1px soli grey;
+}
+
+span.product-price-span {
+	display: block;
+	font-size: 2.4rem;
+}
+
+.single-product-size-btn {
+	border: 2px solid grey;
+	padding: .8rem;
+	font-weight: bold;
+}
+.single-product-size-btn:hover {
+	background-color: #f7d933;
+}
+.single-product-size-btn.active {
+	background-color: #f7d933;
+}
+
+/* Warning when product added to cart without a size selected first */
+#size-warning-span {
+	display: none;
+	padding: 4px;
+	margin-top: 1rem;
+	font-size: 1.2rem;
+}
+#size-warning-span.success {
+	background-color: rgb(74, 184, 53);
+}
+#size-warning-span.error {
+	background-color: rgb(241, 98, 32);
+}
+
+/* 'Add to Cart' prouct button */
+#add-to-cart-btn {
+	background-color: #0085c6;
+	color: #ffffff;
+	border-radius: .4rem;
+	font-size: 1.6rem;
+	padding: .8rem;
+}
+#add-to-cart-btn:hover {
+	color: #f7d933;
+}
+
+/* NEW PRODUCT FORM */
+#submit-form-input {
+	margin: auto;
+	margin-top: 1.2rem;
+}
+/* FILE INPUTS */
+/* Image Inputs */
+#file-input-container {
+	text-align: left;
+}
+.file-input-individual-container {
+	margin-bottom: 1.2rem;
+}
+/* Actual input element */
+.new-product-image-input {
+	display: inline-block;
+	position: relative;
+	/* left: 30px; */ /* Moved away from the span */
+}
+.cancel-file-span {
+	display: inline-block;
+	position: absolute;
+	right: 175px;
+	font-weight: bold;
+	font-size: 1.8rem;
+	line-height: 2rem;
+	padding-left: .4rem;
+	padding-bottom: .2rem;
+	padding-right: .4rem;
+	border-radius: .25rem;
+	background-color: red;
+	color: white;
+	visibility: hidden;
+}
+
+/* IMAGES */
+/* Configure preview thumbnail container displays */
+.new-product-img-preview-div {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+	visibility: hidden;
+}
+/* Assign upload preview thumbnails to only cover parent div */
+.preview-thumbnail-img {
+	height: 100%;
+	width: 100%;
+}
+
+/* Right column of new product input */
+/* Product name input */
+#product-name-input-container {
+	border: 1px solid black;
+	padding: .4rem;
+}
+#input-product-name {
+	display: block;
+	margin: auto;
+}
+
+/* Gender and category input container */
+#gender-category-input-group {
+	border: 1px solid black;
+	padding: .4rem;
+	margin-top: 2rem;
+}
+/* Make gender select appear as block element so category goes under */
+#gender-sub-container {
+	margin-top: .4rem;
+	display: block;
+}
+/* Hide the category container by default - show it when gender is selected */
+#category-sub-container {
+	visibility: hidden;
 }

@@ -18,4 +18,5 @@
 			<a href="<?php echo get_option('home'); ?>/">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/spriditis.png">
 			</a>
+			<a id="new-product-page-link" href="<?php echo(get_site_url() . "/index.php/jauna-prece"); ?>">Pievienot preci</a>
 		</header>

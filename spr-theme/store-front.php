@@ -40,139 +40,42 @@
 	</div>
 </div>
 <br>
+
 <!-- Product showcase div-->
+<!-- Get 12 latest products -->
+<?php
+$latest_products = get_latest_products();
+?>
 <div id="productShowcaseDiv">
-	<div class="row">
-		<div class="col-6 col-md-3 product-window-col">
+<?php
+$i = 1;
 
-			<div class="card">
-				<a href="<?php echo(get_site_url() . "/index.php/prece?id=1"); ?>"><img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/baby_clothes_example.jpg" alt="Card image cap"></a>
-				<span class="jauns-ribbon ribbon">Jauns</span>
-				<span class="akcija-ribbon ribbon">Akcija</span>
-				<div class="card-body">
-					<a href="<?php echo(get_site_url() . "/index.php/prece?id=1"); ?>"><h5 class="card-title" style="text-align: center;">Bērnu apģērbs</h5></a>
-					<p class="card-text" style="text-align: center;">Izmērs: S, M, L</p>
-					<span class="mb2" style="text-align: center; display: block;">15,00 €</span>
-				</div> <!-- Card body -->
+// Product loop starts
+while($row = $latest_products->fetch_assoc()) {
+	if($i === 1) { ?>
+		<div class="row mb-4"> <!-- Row starts -->
+	<?php } ?>
+		<div class="col-6 col-md-3 product-window-col"> <!-- Product column starts -->
+			<div class="card"> <!-- Card starts -->
+				<a href="<?php echo(get_site_url() . "/index.php/prece?id=" . $row['Product_ID']); ?>" class="card-img-a"><img class="card-img-top" src="<?php echo($row['Product_Image1']); ?>" alt="Card image cap"></a>
+				<?php if($row['Is_New']) { ?> <span class="jauns-ribbon ribbon">Jauns</span> <?php } ?>
+				<?php if($row['Is_Discounted']) { ?> <span class="akcija-ribbon ribbon">Akcija</span> <?php } ?>
+				<div class="card-body"> <!-- Card body starts -->
+					<a class="listed-product-header" href="<?php echo(get_site_url() . "/index.php/prece?id=" . $row['Product_ID']); ?>"><?php echo($row['Product_Name']); ?></a>
+					<p class="card-text" style="text-align: center;">Izmērs: <?php echo($row['Product_Size']); ?></p>
+					<span class="listed-product-price" style="text-align: center; display: block;"><?php echo($row['Product_Price']); ?> €</span>
+				</div> <!-- Card body ends -->
 			</div> <!-- Card ends -->
-
-		</div> <!-- Col ends -->
-		<div class="col-6 col-md-3 product-window-col">
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/bikses1.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-		</div>
-		<div class="col-6 col-md-3 product-window-col">
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/krekls1.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-		</div>
-		<div class="col-6 col-md-3 product-window-col">
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/kombinezons1.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-		</div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="col product-window-col">
-
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/example2.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-					<a href="#" class="btn btn-primary">Skatīt vairāk</a>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-
-		</div> <!-- Col ends -->
-		<div class="col product-window-col">
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/bikses2.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-					<a href="#" class="btn btn-primary">Skatīt vairāk</a>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-		</div>
-		<div class="col product-window-col">
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/krekls2.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-					<a href="#" class="btn btn-primary">Skatīt vairāk</a>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-		</div>
-		<div class="col product-window-col">
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/kombinezons2.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-					<a href="#" class="btn btn-primary">Skatīt vairāk</a>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-		</div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="col product-window-col">
-
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/example3.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-					<a href="#" class="btn btn-primary">Skatīt vairāk</a>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-
-		</div> <!-- Col ends -->
-		<div class="col product-window-col">
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/krekls3.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-					<a href="#" class="btn btn-primary">Skatīt vairāk</a>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-		</div>
-		<div class="col product-window-col">
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/bikses3.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-					<a href="#" class="btn btn-primary">Skatīt vairāk</a>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-		</div>
-		<div class="col product-window-col">
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_stylesheet_directory_uri(); ?>/images/kombinezons3.jpg" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Bērnu apģērbs</h5>
-					<p class="card-text">Izmērs: S</p>
-					<a href="#" class="btn btn-primary">Skatīt vairāk</a>
-				</div> <!-- Card body -->
-			</div> <!-- Card ends -->
-		</div>
-	</div>
+		</div> <!-- Product column starts -->
+<?php
+	if($i === 4) { ?>
+	</div> <!-- Row ends -->
+	<?php }
+	if ($i === 4) {
+		$i = 1;
+	} else {
+		$i++;
+	}
+?>
+<?php } // Product loop ends ?> 
 </div>
